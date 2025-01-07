@@ -134,6 +134,22 @@ public class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
         lenght++;
+        return true;
+    }
+
+    public Node delete(int index){
+         if(index < 0 || index > lenght) return null;
+         if(index == 0) return removeFirst();
+         if(index == lenght) return removeLast();
+        Node prev = get(index -1);
+        Node temp = prev.next;
+        prev.next = temp.next;
+        temp.next = null;
+        lenght--;
+        return temp;
+
+
+
 
     }
 }
